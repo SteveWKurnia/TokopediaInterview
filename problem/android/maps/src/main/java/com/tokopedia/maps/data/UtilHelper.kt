@@ -5,7 +5,7 @@ import java.util.*
 
 object UtilHelper {
 
-    val BASE_URL = "https://restcountries-v1.p.rapidapi.com/"
+    const val BASE_URL = "https://restcountries-v1.p.rapidapi.com/"
 
     fun Long.formatNumber(): String {
         val nf = NumberFormat.getNumberInstance(Locale("in", "ID"))

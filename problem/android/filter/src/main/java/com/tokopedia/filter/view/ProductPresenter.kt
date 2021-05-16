@@ -20,7 +20,6 @@ class ProductPresenter constructor(
         val tempList = mutableListOf<Product>()
 
         if (!filterList.isNullOrEmpty()) {
-            Log.d("testing123", "All filter")
             for (filter in filterList) {
                 if (filter == "Other") {
                     filteredProductList.addAll(productList.filter { it.shop.city != topTwoShop[0] && it.shop.city != topTwoShop[1] })
@@ -30,7 +29,6 @@ class ProductPresenter constructor(
             }
             tempList.addAll(filteredProductList.filter { it.priceInt in minPrice until maxPrice })
         } else if (filterList.isNullOrEmpty()){
-            Log.d("testing123", "Price filter")
             tempList.addAll(productList.filter { it.priceInt in minPrice until maxPrice })
         }
         view.setData(tempList)
